@@ -1,0 +1,91 @@
+/* ────────────────────────────────────────────────────────────────
+   사용자 메뉴얼 — 가독성 덧CSS
+
+   메뉴얼 본문은 Baton 레포에서 빌드해 온 **사본**이라 손으로 고치지 않는다.
+   대신 이 한 장을 머리에 끼워 크기·행간·자간만 다시 잡는다
+   (scripts/manual-publish.mjs 가 발행할 때마다 끼운다).
+
+   색은 건드리지 않는다 — 메뉴얼이 들고 온 토큰이 라이트·다크를 이미 맞춘다.
+   여기서 바꾸는 것은 **읽히는 크기**뿐이다.
+
+   @media (min-width:901px) 로 감싼 것은 메뉴얼 자체가 900px 에서 1단으로
+   접기 때문이다. 이 파일이 inline <style> 보다 뒤에 오므로, 감싸지 않으면
+   그 접힘을 덮어써서 모바일이 깨진다.
+   ──────────────────────────────────────────────────────────────── */
+
+/* ── 본문 — 15/1.7 → 16/1.8, 자간을 한 칸 벌린다 ───── */
+
+body {
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  /* 한글은 어절로 끊는다 */
+  word-break: keep-all;
+}
+
+/* 본문 안에 섞이는 작은 글들도 한 칸씩 — 16px 옆에서 13px 는 너무 작다 */
+code, kbd { font-size: 14px; }
+table { font-size: 15px; }
+.tip, .warn, .note { font-size: 15px; line-height: 1.75; }
+.card p { font-size: 14.5px; line-height: 1.7; }
+figcaption { font-size: 13.5px; line-height: 1.6; }
+td small { font-size: 13px; }
+
+/* 문단 사이가 붙어 있으면 행간을 넓혀도 덩어리로 보인다 */
+p { margin-block: 0 14px; }
+li { margin-bottom: 6px; }
+
+/* 긴 코드 블록(워크플로우 YAML 같은 것)이 지면을 통째로 밀고 있었다 —
+   pre 에 overflow 가 없어 안의 code 가 그대로 삐져나왔다.
+   블록 **안에서** 가로로 밀리게 한다. */
+pre { overflow-x: auto; max-width: 100%; }
+
+/* 제목은 행간을 조금 풀고 위 여백을 벌려 절이 갈리게 */
+h2 { line-height: 1.38; margin-top: 44px; }
+h3 { line-height: 1.45; margin-top: 34px; }
+h2:first-of-type { margin-top: 0; }
+
+/* ── LNB — 줄바꿈이 잦은 자리라 폭·행간을 함께 푼다 ── */
+
+@media (min-width: 901px) {
+  /* 250 → 280. 행간만 벌리면 줄 수는 그대로다 — 줄바꿈 자체를 줄인다 */
+  .layout { grid-template-columns: 280px minmax(0, 1fr); }
+}
+
+#toc {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  /* 낱말이 줄 끝에서 쪼개지지 않게 — 두 줄로 넘어가도 어절이 붙어 있다 */
+  word-break: keep-all;
+}
+
+.toc-list a {
+  line-height: 1.65;
+  padding: 5px 8px;
+}
+
+/* 두 줄짜리 항목이 이웃과 붙어 보이지 않게 항목 사이를 벌린다 */
+.toc-list > li { margin-bottom: 10px; }
+.toc-list ol { margin: 4px 0 0 10px; padding-left: 12px; }
+.toc-list ol li { margin-bottom: 2px; }
+
+/* ── 좁은 화면 ────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  body { font-size: 15.5px; line-height: 1.75; }
+  h2 { margin-top: 36px; }
+  h3 { margin-top: 28px; }
+
+  /* 표가 지면을 밀어내던 것을 여기서 끊는다.
+     원천 메뉴얼부터 그랬고(덧CSS 없이 360px 에서 253px 넘침), 글자를 키우니 더 벌어졌다.
+     칸 안에서는 keep-all 을 풀고 — 어절이 길면 칸 폭이 그만큼 잡히기 때문 —
+     그래도 남는 긴 코드 토막은 아무 데서나 끊는다. */
+  td, th { word-break: normal; overflow-wrap: anywhere; }
+
+  /* 문단 안에 섞인 긴 토막(`~/.baton/app.conf` 같은 것)도 좁은 화면에서는 끊는다 —
+     안 끊으면 그 한 덩이가 지면 폭을 잡는다. pre 안의 코드는 위에서 따로 민다. */
+  code, kbd { overflow-wrap: anywhere; }
+
+  /* 그래도 넘치는 넓은 표는 **표 안에서** 가로로 민다 — 지면은 밀지 않는다 */
+  table { display: block; overflow-x: auto; max-width: 100%; }
+}
