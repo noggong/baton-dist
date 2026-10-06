@@ -41,17 +41,30 @@
       위의 <strong>사용자 메뉴얼 열기</strong> 는 늘 최신 판으로 갑니다.
     </p>
     <!--
-      이 표는 scripts/manual-publish.mjs 를 돌릴 때마다 한 줄씩 는다.
+      이 표는 **발행된 판 폴더(manual/v*/)에서 렌더된다** — 손으로 고치지 않는다.
+      scripts/release-sync.mjs 가 폴더를 세고 날짜는 data/releases.json 에서 가져온다.
       발행 절차는 README.md 의 「메뉴얼」 참고.
     -->
     <table>
       <thead><tr><th>판</th><th>발행</th><th>열기</th></tr></thead>
       <tbody>
+        <!-- manual:rows:start — scripts/release-sync.mjs 가 만든다. 이 사이를 손으로 고치면 다음 발행에서 덮인다. -->
         <tr>
-          <td><strong>v1.3.5</strong> <span class="tag tag-latest">최신</span></td>
+          <td><strong>v1.3.11</strong> <span class="tag tag-latest">최신</span></td>
+          <td>2026-10-06</td>
+          <td><a href="manual/v1.3.11/index.html">사용자 메뉴얼 v1.3.11</a></td>
+        </tr>
+        <tr>
+          <td><strong>v1.3.10</strong></td>
+          <td>2026-10-06</td>
+          <td><a href="manual/v1.3.10/index.html">사용자 메뉴얼 v1.3.10</a></td>
+        </tr>
+        <tr>
+          <td><strong>v1.3.5</strong></td>
           <td>2026-10-05</td>
           <td><a href="manual/v1.3.5/index.html">사용자 메뉴얼 v1.3.5</a></td>
         </tr>
+        <!-- manual:rows:end -->
       </tbody>
     </table>
     <p class="note">
