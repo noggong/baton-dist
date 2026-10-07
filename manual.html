@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>메뉴얼 — Baton</title>
-<meta name="description" content="Baton 사용자 메뉴얼 — 화면·메뉴별 사용법과 캡처 143장.">
+<meta name="description" content="Baton 사용자 메뉴얼 — 화면·메뉴별 사용법과 캡처.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
     <a class="brand" href="index.html"><span class="mark">B</span>Baton</a>
     <nav class="nav">
       <a href="index.html">소개</a>
+      <a href="start.html">시작하기</a>
       <a href="release.html">릴리스</a>
       <a href="manual.html" aria-current="page">메뉴얼</a>
     </nav>
@@ -23,23 +24,36 @@
 <main class="wrap narrow">
 
   <h1>메뉴얼</h1>
-  <p class="section-lead">
-    화면과 메뉴마다 「무엇을 하는가 → 따라 하기 → 캡처」 순서로 적힌 <strong>사용자 메뉴얼</strong>이 있습니다.
-    절 118개 · 캡처 143장 · 키워드 검색이 들어 있고, 앱 안에서는 <strong>도움말 › 사용자 메뉴얼</strong> 이
-    같은 문서를 엽니다.
-  </p>
+  <p class="section-lead">화면과 메뉴마다 「무엇을 하는가 → 따라 하기 → 캡처」 순서로 적혀 있습니다.</p>
 
-  <div class="cta-row left" style="margin-bottom: var(--s10)">
+  <div class="cta-row left" style="margin-bottom: var(--s12)">
     <a class="btn btn-primary" href="manual/index.html">사용자 메뉴얼 열기</a>
-    <a class="btn" href="release.html">앱 받기</a>
+    <a class="btn" href="start.html">시작하기</a>
   </div>
 
+  <nav class="toc">
+    <strong>메뉴얼 목차</strong>
+    <ol>
+      <li><a href="manual/index.html#start">시작하기</a></li>
+      <li><a href="manual/index.html#board">보드</a></li>
+      <li><a href="manual/index.html#detail">상세 패널</a></li>
+      <li><a href="manual/index.html#topbar">상단바</a></li>
+      <li><a href="manual/index.html#jira">Jira</a></li>
+      <li><a href="manual/index.html#run">실행 · 워크플로우</a></li>
+      <li><a href="manual/index.html#agents">에이전트</a></li>
+      <li><a href="manual/index.html#project">프로젝트 메뉴</a></li>
+      <li><a href="manual/index.html#rails">나머지 레일</a></li>
+      <li><a href="manual/index.html#settings">설정</a></li>
+      <li><a href="manual/index.html#ai-tools">AI 에게 기능 시키기</a></li>
+      <li><a href="manual/index.html#nondev">코드를 다루지 않는 일</a></li>
+      <li><a href="manual/index.html#shortcuts">단축키</a></li>
+      <li><a href="manual/index.html#app-menu">앱 메뉴 막대 · 트레이</a></li>
+      <li><a href="manual/index.html#faq">문제 해결 FAQ</a></li>
+    </ol>
+  </nav>
+
   <section>
-    <h2>판</h2>
-    <p class="section-lead">
-      앱 버전마다 메뉴얼이 따로 섭니다. 쓰고 있는 버전의 판을 여세요 —
-      위의 <strong>사용자 메뉴얼 열기</strong> 는 늘 최신 판으로 갑니다.
-    </p>
+    <h2>버전 히스토리</h2>
     <!--
       이 표는 **발행된 판 폴더(manual/v*/)에서 렌더된다** — 손으로 고치지 않는다.
       scripts/release-sync.mjs 가 폴더를 세고 날짜는 data/releases.json 에서 가져온다.
@@ -67,180 +81,24 @@
         <!-- manual:rows:end -->
       </tbody>
     </table>
-    <p class="note">
-      Baton 레포는 <strong>현재 판 하나만</strong> 들고 있습니다. 지난 판을 모아 두는 자리가
-      여기입니다 — 새 릴리스가 나올 때마다 한 판씩 쌓입니다.
-    </p>
-  </section>
-
-  <nav class="toc">
-    <strong>메뉴얼 목차</strong>
-    <ol>
-      <li><a href="manual/index.html#start">시작하기</a></li>
-      <li><a href="manual/index.html#board">보드</a></li>
-      <li><a href="manual/index.html#detail">상세 패널</a></li>
-      <li><a href="manual/index.html#topbar">상단바</a></li>
-      <li><a href="manual/index.html#jira">Jira · 자동 사냥</a></li>
-      <li><a href="manual/index.html#run">실행 · 워크플로우</a></li>
-      <li><a href="manual/index.html#agents">에이전트</a></li>
-      <li><a href="manual/index.html#project">프로젝트 메뉴</a></li>
-      <li><a href="manual/index.html#rails">나머지 레일</a></li>
-      <li><a href="manual/index.html#settings">설정</a></li>
-      <li><a href="manual/index.html#ai-tools">AI 에게 baton 기능 시키기</a></li>
-      <li><a href="manual/index.html#nondev">코드를 다루지 않는 일</a></li>
-      <li><a href="manual/index.html#shortcuts">단축키</a></li>
-      <li><a href="manual/index.html#app-menu">앱 메뉴 막대 · 트레이</a></li>
-      <li><a href="manual/index.html#faq">문제 해결 FAQ</a></li>
-      <li><a href="manual/index.html#about">이 매뉴얼에 대해</a></li>
-    </ol>
-  </nav>
-
-  <section id="start">
-    <h2>처음이면 여기부터</h2>
-    <p class="section-lead">설치하고 보드에 들어가기까지의 큰 순서입니다. 각 단계의 자세한 화면은 메뉴얼에 있습니다.</p>
-    <ol class="steps">
-      <li>
-        <strong>미리 갖춰 둘 것을 확인합니다</strong> — Node ≥ 24 · Claude Code CLI 로그인 ·
-        <code>gh auth login</code> · (선택) 브라우저에서 Jira 로그인.
-        <a href="release.html#start">릴리스 페이지의 표</a> 를 보세요.
-      </li>
-      <li>
-        <a href="release.html">릴리스</a> 에서 내 칩에 맞는 dmg 를 받아 <code>응용 프로그램</code> 에 넣습니다.
-      </li>
-      <li>
-        앱을 열면 <strong>Setup Gate</strong> 가 9스텝 진단을 걷습니다. 실패한 줄의 「고치기」를 누르면
-        그 자리에서 고쳐지고, <strong>필수 스텝이 전부 초록이면 게이트가 열립니다</strong>(선택 스텝은 영향 없음).
-        → <a href="manual/index.html#start-first-run">메뉴얼: 첫 실행</a>
-      </li>
-      <li>
-        6번 스텝에서 <strong>워크스페이스</strong>를 추가합니다 — 폴더를 고르면 하위 <code>.git</code> 레포를
-        찾아 프로젝트로 등록하고 프로젝트 맵을 만듭니다.
-      </li>
-      <li>
-        보드로 들어갑니다. 왼쪽 위 워크스페이스 트리 · 왼쪽 아래 열린 세션 목록 · 오른쪽 세션 대화입니다.
-        → <a href="manual/index.html#board-layout">메뉴얼: 보드 구성</a>
-      </li>
-    </ol>
-    <p class="note">
-      <strong>Jira 는 선택입니다.</strong> 미연동이어도 앱은 켜지고 티켓 폴링만 비활성이 됩니다.
-      읽기는 브라우저 쿠키 세션이라 별도 API 토큰이 필요 없고, 티켓 생성·전이 같은 쓰기는 세션의
-      Atlassian MCP 로 위임됩니다.
-    </p>
-  </section>
-
-  <section>
-    <h2>어디서 무엇을 하나</h2>
-    <p class="section-lead">레일(<kbd>⌘1</kbd>~<kbd>⌘9</kbd>)별로 하는 일입니다.</p>
-    <table>
-      <thead><tr><th>자리</th><th>하는 일</th><th>메뉴얼</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>보드</strong></td>
-          <td>워크스페이스 5단 트리 · worktree 그룹으로 에픽처럼 묶기 · 열려 있는 세션 · 세션 대화와 정보 칩</td>
-          <td><a href="manual/index.html#board">보드</a></td>
-        </tr>
-        <tr>
-          <td><strong>실행</strong></td>
-          <td>워크플로우 고르고 돌리기 · 타임라인 · 실패 지점부터 잇기 · 크론 예약</td>
-          <td><a href="manual/index.html#run">실행</a></td>
-        </tr>
-        <tr>
-          <td><strong>기록</strong></td>
-          <td>닫은 worktree 의 요약 · 대화 · 링크 · 산출물 아카이브와 전역 검색(<kbd>⌘⇧F</kbd>)</td>
-          <td><a href="manual/index.html#rails">나머지 레일</a></td>
-        </tr>
-        <tr>
-          <td><strong>Jira</strong></td>
-          <td>내 이슈 목록·상세 · 인라인 편집 · 새 댓글 N 배지 · 자동 사냥</td>
-          <td><a href="manual/index.html#jira">Jira</a></td>
-        </tr>
-        <tr>
-          <td><strong>즐겨찾기 · 스니펫 · 메모 · 일지 · 위키</strong></td>
-          <td>링크와 글을 모아 두는 자리들</td>
-          <td><a href="manual/index.html#rails">나머지 레일</a></td>
-        </tr>
-        <tr>
-          <td><strong>에이전트</strong></td>
-          <td>역할의 지시문 · 모델 · 도구를 보고 고치기 · 업무 요청으로 일 맡기기</td>
-          <td><a href="manual/index.html#agents">에이전트</a></td>
-        </tr>
-        <tr>
-          <td><strong>모니터링 · 진단</strong></td>
-          <td>토큰 사용량 · 9스텝 재검사 · MCP 헬스체크와 재인증</td>
-          <td><a href="manual/index.html#faq">FAQ</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <figure style="margin-top: var(--s6)">
-      <div class="shot"><img src="assets/shots/wiki.png" alt="위키 레일 — 문서 목록과 본문" loading="lazy" width="1440" height="900"></div>
-      <figcaption>레일마다 같은 규칙으로 쓰고 찾습니다 — 캡처는 메뉴얼의 「나머지 레일」</figcaption>
-    </figure>
-  </section>
-
-  <section>
-    <h2>자주 걸리는 것</h2>
-    <p class="section-lead">전체 표는 <a href="manual/index.html#faq">메뉴얼의 문제 해결 FAQ</a> 에 있습니다.</p>
-    <table>
-      <thead><tr><th>증상</th><th>조치</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>채팅 응답이 안 옴</strong></td>
-          <td>배너의 「계속 기다림 / 중단」 으로 답합니다. ① 진단 &gt; Claude Code CLI 통과? ② 설정의 <code>engine.claudePath</code> 가 <strong>로그인된</strong> <code>claude</code> 를 가리키는지(비우면 SDK 번들 CLI 라 로그인이 없습니다).</td>
-        </tr>
-        <tr>
-          <td><strong>보드에 세션이 안 보임</strong></td>
-          <td>15초 기다리거나 새로고침. 워크스페이스 경로가 그 레포의 상위인지 확인합니다 — 경로 밖 세션은 「분류 안 됨」 그룹으로 갑니다.</td>
-        </tr>
-        <tr>
-          <td><strong>티켓 · PR 이 안 붙음</strong></td>
-          <td>브랜치명이 <code>feature/PROJ-1234</code> 형식인지, 진단의 Jira · GitHub 스텝이 통과인지 봅니다.</td>
-        </tr>
-        <tr>
-          <td><strong>MCP 「인증 필요」 배지</strong></td>
-          <td>배지에서 해당 서버 재인증 → 열린 세션에 <code>/mcp</code> 전송 → 브라우저 OAuth. <code>connected</code> 까지 검증한 뒤 배지가 풀립니다.</td>
-        </tr>
-        <tr>
-          <td><strong>창이 안 보임</strong></td>
-          <td><kbd>⌘⇧O</kbd> — 작업영역 밖 좌표는 자동으로 당겨옵니다.</td>
-        </tr>
-        <tr>
-          <td><strong>화면이 이상함</strong></td>
-          <td>설정(레일 하단) &gt; 레이아웃 초기화. 데이터는 유지됩니다.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="note warn">
-      <strong>완전 초기화는 마지막에.</strong> 앱을 끄고 <code>rm -rf ~/.baton</code> 하면 셋업부터 다시
-      시작하지만, 아카이브 · 성과 · 문서 연결이 함께 지워집니다.
-    </p>
-  </section>
-
-  <section>
-    <h2>단축키 몇 개</h2>
-    <p class="section-lead">전체 표는 <a href="manual/index.html#shortcuts">메뉴얼의 단축키</a> 에 있습니다.</p>
-    <table>
-      <thead><tr><th>키</th><th>하는 일</th></tr></thead>
-      <tbody>
-        <tr><td><kbd>⌘K</kbd></td><td>명령 팔레트</td></tr>
-        <tr><td><kbd>⌘1</kbd>~<kbd>⌘9</kbd></td><td>레일 화면 (보드 · 실행 · 기록 · Jira …)</td></tr>
-        <tr><td><kbd>⌘⇧F</kbd></td><td>통합 검색 (활성 + 보관)</td></tr>
-        <tr><td><kbd>⌘T</kbd> / <kbd>⌘W</kbd></td><td>새 세션 / 세션 탭 닫기</td></tr>
-        <tr><td><kbd>⌘↵</kbd></td><td>전송</td></tr>
-        <tr><td><kbd>⌘N</kbd> / <kbd>⌘P</kbd></td><td>트리 행에서 하나 더 만들기 / 그 레포의 열린 PR</td></tr>
-        <tr><td><kbd>⌘⇧O</kbd></td><td>전역 창 토글 — 어디서나 부르고, 보고 있으면 숨김</td></tr>
-      </tbody>
-    </table>
   </section>
 
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>Baton — 일은 AI에게, 지휘는 여기서</span>
-    <span class="spacer"></span>
-    <a href="index.html">소개</a>
-    <a href="release.html">릴리스</a>
-    <a href="https://github.com/noggong/baton-dist">GitHub</a>
+    <div class="foot-row">
+      <span>Baton — 일은 AI에게, 지휘는 여기서</span>
+      <span class="spacer"></span>
+      <a href="index.html">소개</a>
+      <a href="start.html">시작하기</a>
+      <a href="release.html">릴리스</a>
+    </div>
+    <div class="foot-meta">
+      <span>문의 · 버그 제보 <a href="mailto:noggong@gmail.com">noggong@gmail.com</a></span>
+      <span class="spacer"></span>
+      <span>무료 · 상업적 이용 가능</span>
+    </div>
   </div>
 </footer>
 

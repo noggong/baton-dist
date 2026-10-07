@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시작하기 — Baton</title>
+<meta name="description" content="설치부터 첫 작업까지 — 한 번에 설정 · 워크스페이스 추가 · 세션에 일 시키기.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">B</span>Baton</a>
+    <nav class="nav">
+      <a href="index.html">소개</a>
+      <a href="start.html" aria-current="page">시작하기</a>
+      <a href="release.html">릴리스</a>
+      <a href="manual.html">메뉴얼</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>시작하기</h1>
+  <p class="section-lead">설치부터 첫 작업까지 여섯 단계. 화면마다 자세한 사용법은 <a href="manual.html">메뉴얼</a>에 있습니다.</p>
+
+  <section style="margin-top: var(--s12)">
+
+    <div class="step" id="step-install">
+      <span class="num">1</span>
+      <div>
+        <h3>받아서 열기</h3>
+        <ul>
+          <li>내 맥에 맞는 dmg 받기 — Apple silicon 은 <code>-arm64</code>, Intel 은 접미사 없는 것</li>
+          <li>서명·공증본 — Gatekeeper 경고 없이 열림</li>
+          <li>자동 업데이트 없음 — 새 dmg 로 덮어쓰면 되고 데이터는 그대로</li>
+        </ul>
+        <div class="cta-row left">
+          <a class="btn btn-primary" href="release.html">최신 버전 받기</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-setup">
+      <span class="num">2</span>
+      <div>
+        <h3>「한 번에 설정」 누르기</h3>
+        <p class="section-lead">처음 켜면 준비 화면이 9개 항목을 점검합니다. 버튼 하나로 끝납니다.</p>
+        <ul>
+          <li>앱이 알아서 하는 것 — 필요한 도구 설치 · 로그인 · 필수 MCP 연결 · 기본값 채우기</li>
+          <li>브라우저 로그인이 필요하면 창을 열어 주고, 돌아와 누르면 이어서 진행</li>
+          <li>사람이 할 것만 마지막에 안내 — 워크스페이스 폴더 고르기 · 토큰 입력</li>
+          <li>도는 동안 다른 화면으로 가도 됨 — 끝나면 알림</li>
+          <li>실패한 줄에는 「고치기」 버튼 — 그 자리에서 해결</li>
+        </ul>
+        <figure>
+          <div class="shot"><img src="assets/shots/setup-gate.png" alt="첫 실행 화면 — 「한 번에 설정」 카드와 9개 점검 목록" loading="lazy" width="1440" height="900"></div>
+          <figcaption>필수 항목이 모두 통과하면 앱이 열립니다</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="step" id="step-workspace">
+      <span class="num">3</span>
+      <div>
+        <h3>워크스페이스와 프로젝트 추가하기</h3>
+        <p class="section-lead">상단바 왼쪽의 워크스페이스 이름을 누르면 추가 메뉴가 열립니다.</p>
+        <figure style="margin-bottom: var(--s5)">
+          <div class="shot free"><img src="assets/shots/board-titlebar-ws-menu.png" alt="워크스페이스 전환 메뉴 — 재스캔 · 워크스페이스 추가 · 신규 프로젝트 추가 · 폴더에서 프로젝트 추가" loading="lazy" width="312" height="322"></div>
+          <figcaption>상단바 워크스페이스 이름 › 추가 메뉴</figcaption>
+        </figure>
+        <ul>
+          <li><strong>워크스페이스 추가</strong> — 폴더 하나 고르기. 하위 git 레포를 찾아 목록으로 보여 줌</li>
+          <li><strong>프로젝트 고르기</strong> — 찾아낸 목록에서 쓸 레포만 체크. 체크한 행에서 타입(개발 · 학습 · 기획 · 통합)도 함께 고름 — <strong>등록 뒤에는 못 바꿈</strong></li>
+          <li><strong>git 레포가 아닌 폴더도 가능</strong> — 켜서 추가하면 앱이 그 자리에서 <code>git init</code></li>
+          <li><strong>폴더에서 프로젝트 추가</strong> — 워크스페이스 밖의 폴더 하나만 붙일 때</li>
+          <li><strong>신규 프로젝트 추가</strong> — 폴더조차 없을 때. 위치 · 이름 · 「무엇을 만드나」를 적으면 뼈대까지 만들어 줌</li>
+        </ul>
+        <figure>
+          <div class="shot free"><img src="assets/shots/board-new-project.png" alt="신규 프로젝트 추가 창 — 타입 · 저장할 위치 · 이름 · 무엇을 만드나" loading="lazy" width="1008" height="648"></div>
+          <figcaption>신규 프로젝트 추가 — 이름을 비우면 적은 내용으로 제안해 줍니다</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="step" id="step-structure">
+      <span class="num">4</span>
+      <div>
+        <h3>구조 익히기</h3>
+        <p class="section-lead">보드 트리는 다섯 단입니다. 위에서 아래로 좁아집니다.</p>
+        <ul class="levels">
+          <li style="--depth: 0"><strong>워크스페이스</strong> — 레포들을 모아 둔 폴더 한 벌. 회사 · 개인처럼 자리를 가름</li>
+          <li style="--depth: 1"><strong>프로젝트</strong> — git 레포 하나</li>
+          <li style="--depth: 2"><strong>worktree(작업)</strong> — 티켓 · 브랜치 하나짜리 작업 폴더. 서로 영향 없이 동시에 여럿</li>
+          <li style="--depth: 3"><strong>세션</strong> — 그 작업에 붙은 AI 대화. 한 작업에 여러 개 가능</li>
+          <li style="--depth: 4"><strong>서브에이전트</strong> — 세션이 부리는 역할. 큰 일을 나눠 맡음</li>
+        </ul>
+        <p class="section-lead" style="margin-top: var(--s5)">
+          <strong>그룹</strong>은 여기에 더하는 묶음입니다 — 여러 레포에 걸친 작업을 에픽처럼 한 자리에 모읍니다.
+        </p>
+        <ul>
+          <li>만들기 — 워크스페이스 행의 <kbd>⋯</kbd> › <strong>그룹 만들기</strong>. 이름과 링크 하나(선택)</li>
+          <li>넣기 — 작업 행을 그룹 안으로 끌어다 놓기(행 메뉴 › <strong>그룹으로 이동</strong>도 같음)</li>
+          <li>빼기 — 그룹 밖으로 끌어다 놓거나 <kbd>⌥⌫</kbd> — 제 프로젝트 자리로 돌아감</li>
+          <li>그룹째 문서를 붙이고, 구성원 세션에 같은 요청을 한 번에 보낼 수 있음</li>
+        </ul>
+        <figure>
+          <div class="shot free"><img src="assets/shots/board-group-move.png" alt="작업 행 메뉴의 「그룹으로 이동」 — 새 그룹 만들기" loading="lazy" width="284" height="167"></div>
+          <figcaption>행 메뉴 › 그룹으로 이동 — 끌어다 놓아도 같습니다</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="step" id="step-worktree">
+      <span class="num">5</span>
+      <div>
+        <h3>첫 작업 만들기</h3>
+        <ul>
+          <li>트리에서 프로젝트 행의 <kbd>⋯</kbd> › <strong>worktree 만들기</strong></li>
+          <li>브랜치 이름 넣기 — Jira 티켓 키는 선택</li>
+          <li>티켓을 넣으면 그 내용을 읽은 세션까지 열림</li>
+          <li>만드는 동안 다른 일 계속 — 다 되면 우하단 알림으로 안내</li>
+        </ul>
+        <figure>
+          <div class="shot free"><img src="assets/shots/board-tree-project-menu.png" alt="프로젝트 행 메뉴 — 맨 위에 worktree 만들기, 아래에 터미널 열기 · 열린 PR 보기" loading="lazy" width="312" height="566"></div>
+          <figcaption>프로젝트 행 메뉴 — 이 레포로 할 수 있는 일이 모여 있습니다</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="step" id="step-session">
+      <span class="num">6</span>
+      <div>
+        <h3>세션에 일 시키기</h3>
+        <ul>
+          <li>오른쪽 상세 패널의 입력창에 평소 말로 지시</li>
+          <li>입력창 위 칩은 워크플로우 — 누르면 정해진 일이 바로 시작(<kbd>⌘⌥1</kbd>~<kbd>⌘⌥9</kbd>)</li>
+          <li>승인·거부 카드가 대화 안에 뜸 — 밖으로 나가는 일은 묻고 함</li>
+          <li>터미널이 필요하면 <kbd>⌘⇧T</kbd> — 세션 탭과 같은 줄에 터미널 탭이 서고, 앱을 떠나지 않고 <code>npm run dev</code> 같은 명령 실행</li>
+        </ul>
+        <figure>
+          <div class="shot free"><img src="assets/shots/detail-composer-markdown.png" alt="세션 입력창 — 워크플로우 칩과 전송 버튼" loading="lazy" width="983" height="306"></div>
+          <figcaption>입력창 — 쓰는 대로 마크다운이 보이고, 위 칩이 워크플로우입니다</figcaption>
+        </figure>
+
+        <h3 style="margin-top: var(--s8)">먼저 외울 단축키</h3>
+        <table>
+          <thead><tr><th>키</th><th>하는 일</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>⌘↵</kbd></td><td>전송 — 한글을 조합하는 중에는 보내지 않음(조합을 끝내고 한 번 더)</td></tr>
+            <tr><td><kbd>⇧↵</kbd></td><td>입력창으로 점프 — 대화를 읽다가 바로 쓰기로</td></tr>
+            <tr><td><kbd>⌘⌥↓</kbd></td><td>제일 최근 대화로 한 번에 내리기</td></tr>
+            <tr><td><kbd>⌃C</kbd></td><td>도는 응답만 중단 — 세션은 살아 있음</td></tr>
+            <tr><td><kbd>↑</kbd></td><td>입력창에서 보낸 말 다시 꺼내기</td></tr>
+            <tr><td><kbd>⌘T</kbd> / <kbd>⌘W</kbd></td><td>새 세션 / 세션 탭 닫기</td></tr>
+            <tr><td><kbd>⌃Tab</kbd></td><td>다음 세션 탭 — 터미널 탭도 같은 줄에서 함께 돎</td></tr>
+            <tr><td><kbd>⌘F</kbd></td><td>대화에서 찾기</td></tr>
+            <tr><td><kbd>⌘⇧F</kbd></td><td>통합 검색 — 지금 것과 보관된 것을 한 번에</td></tr>
+            <tr><td><kbd>⌘</kbd> <kbd>⌘</kbd></td><td>단축키 창 — ⌘ 를 두 번 톡톡. 키를 눌러 무엇에 걸렸는지도 찾음</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="rails">
+    <h2>화면 둘러보기</h2>
+    <p class="section-lead">왼쪽 레일에서 화면을 고릅니다. 번호 키(<kbd>⌘1</kbd>~<kbd>⌘9</kbd>)는 위에서부터 차례로 붙습니다.</p>
+    <div class="rails">
+
+      <div class="rail">
+        <div class="top"><strong>보드</strong> <kbd>⌘1</kbd></div>
+        <p>트리 · 작업 목록 · 세션 대화 — 일하는 자리</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>실행</strong> <kbd>⌘2</kbd></div>
+        <p>워크플로우를 돌리고 진행을 보는 자리</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>기록</strong> <kbd>⌘3</kbd></div>
+        <p>닫은 작업 검색 · 성과 모아보기</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>Jira</strong> <kbd>⌘4</kbd></div>
+        <p>내 티켓 목록과 상세 · 새 티켓 살피기</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>즐겨찾기</strong> <kbd>⌘5</kbd></div>
+        <p>자주 여는 링크를 소속별로 모아 두기</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>스니펫</strong> <kbd>⌘6</kbd></div>
+        <p>자주 치는 문장을 입력창 버튼으로</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>메모</strong> <kbd>⌘7</kbd></div>
+        <p>글 · 파일 · 이미지를 모아 두는 개인 기록</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>일지</strong> <kbd>⌘8</kbd></div>
+        <p>하루 동안 한 일을 시간대별로</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>에이전트</strong> <kbd>⌘9</kbd></div>
+        <p>역할을 정의하고 업무 맡기기</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>Wiki</strong></div>
+        <p>문서 · 링크 · 메모를 한 자리에</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>브라우저</strong></div>
+        <p>앱을 떠나지 않고 웹 보기 — AI 가 연 탭도 여기</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>모니터링</strong></div>
+        <p>Grafana 대시보드를 앱 안에서</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>진단</strong></div>
+        <p>점검 목록 다시 돌리기 · MCP 상태</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>연동</strong></div>
+        <p>툴 연동과 계정 — 필수가 깨지면 빨간 숫자</p>
+      </div>
+
+      <div class="rail">
+        <div class="top"><strong>설정</strong></div>
+        <p>화면 배율 · 알림 · 레이아웃 · 기기 옮기기</p>
+      </div>
+
+    </div>
+    <p class="note" style="margin-top: var(--s5)">
+      <strong>쓰지 않는 레일은 숨겨집니다.</strong> Jira · 슬랙 같은 연동을 비워 두면 그 화면과 관련 워크플로우가 목록에서 조용히 빠집니다.
+    </p>
+  </section>
+
+  <section class="band">
+    <h2>막히면</h2>
+    <p>화면과 메뉴마다 따라 하기와 캡처가 있습니다. 그래도 안 되면 메일 주세요.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="manual.html">메뉴얼 보기</a>
+      <a class="btn" href="mailto:noggong@gmail.com">noggong@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-row">
+      <span>Baton — 일은 AI에게, 지휘는 여기서</span>
+      <span class="spacer"></span>
+      <a href="index.html">소개</a>
+      <a href="release.html">릴리스</a>
+      <a href="manual.html">메뉴얼</a>
+    </div>
+    <div class="foot-meta">
+      <span>문의 · 버그 제보 <a href="mailto:noggong@gmail.com">noggong@gmail.com</a></span>
+      <span class="spacer"></span>
+      <span>무료 · 상업적 이용 가능</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

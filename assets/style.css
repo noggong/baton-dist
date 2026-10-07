@@ -176,9 +176,19 @@ main { padding: var(--s12) 0 var(--s16); }
   font-size: var(--t-sm);
   padding: var(--s6) 0 var(--s10);
 }
-.site-footer .wrap { display: flex; gap: var(--s5); flex-wrap: wrap; align-items: center; }
+.site-footer .wrap { display: flex; flex-direction: column; gap: var(--s3); }
 .site-footer a { color: var(--fg2); }
 .site-footer .spacer { margin-left: auto; }
+.foot-row { display: flex; gap: var(--s5); flex-wrap: wrap; align-items: center; }
+/* 문의처 · 라이선스는 링크 줄과 섞지 않는다 — 찾는 눈이 다르다 */
+.foot-meta {
+  display: flex;
+  gap: var(--s5);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: var(--s3);
+  font-size: var(--t-xs);
+}
 
 /* ── 제목 · 글줄 ──────────────────────────────────── */
 
@@ -269,6 +279,12 @@ figure { margin: 0; }
   background: var(--sunken);
 }
 
+/* 1440×900 이 아닌 캡처(팝업 · 메뉴 · 입력창) — 제 비율 그대로 두고 가운데 세운다 */
+.shot.free { display: inline-block; max-width: 100%; }
+.shot.free img { aspect-ratio: auto; width: auto; max-width: 100%; }
+/* 작은 캡처는 글 왼쪽에 맞춰 선다 — 캡션만 가운데 있으면 그림과 어긋나 보인다 */
+.shot.free + figcaption { text-align: left; }
+
 figcaption { font-size: var(--t-xs); color: var(--fg3); margin-top: var(--s2); text-align: center; }
 
 .hero-shot { margin: var(--s10) 0 0; }
@@ -353,8 +369,27 @@ figcaption { font-size: var(--t-xs); color: var(--fg3); margin-top: var(--s2); t
 .tag-signed { background: var(--accent-sub); color: var(--accent-fg); border-color: var(--accent-bd); }
 
 .release .body { color: var(--fg2); font-size: var(--t-sm); }
-.release .body ul { margin: 0 0 var(--s3); padding-left: var(--s5); }
-.release .body li { margin-bottom: 3px; }
+/* 줄머리의 종류 뱃지가 글머리표 구실을 한다 — 점을 겹쳐 찍지 않는다 */
+.release .body ul { margin: 0 0 var(--s4); padding-left: 0; list-style: none; }
+.release .body li { margin-bottom: var(--s2); display: flex; gap: var(--s2); align-items: baseline; }
+
+/* 종류 — 뜻이 색에만 실리지 않게 글자를 함께 적는다 */
+.k {
+  flex: none;
+  min-width: 56px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px var(--s2);
+  border-radius: var(--r-sm);
+  background: var(--sunken);
+  color: var(--fg3);
+  border: 1px solid var(--line);
+}
+.k-feat { background: var(--accent-sub); color: var(--accent-fg); border-color: var(--accent-bd); }
+.k-fix { background: var(--crit-sub); color: var(--crit-fg); border-color: var(--crit-bd); }
+.k-imp { background: var(--ok-sub); color: var(--ok-fg); border-color: transparent; }
 .release .body > p:first-child { margin-top: 0; }
 
 .dl-row { display: flex; gap: var(--s2); flex-wrap: wrap; align-items: center; }
@@ -414,6 +449,65 @@ td strong { color: var(--fg); font-weight: 600; }
 ol.steps { color: var(--fg2); padding-left: var(--s5); font-size: var(--t-sm); }
 ol.steps li { margin-bottom: var(--s2); }
 
+/* ── 시작하기 — 번호 붙은 단계 ────────────────────── */
+
+/* 번호는 글이 아니라 자리로 센다 — 단계가 늘어도 들여쓰기가 흔들리지 않게 */
+.step { display: grid; grid-template-columns: 30px 1fr; gap: var(--s4); }
+.step + .step { margin-top: var(--s10); }
+.step .num {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--accent-sub);
+  border: 1px solid var(--accent-bd);
+  color: var(--accent-fg);
+  font-size: var(--t-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin-top: 3px; font-size: var(--t-lg); letter-spacing: -0.02em; }
+.step ul { color: var(--fg2); margin: 0 0 var(--s4); padding-left: var(--s5); font-size: var(--t-sm); }
+.step li { margin-bottom: var(--s1); }
+.step figure { margin-top: var(--s4); }
+
+/* ── 레일 카드 · 계층 ─────────────────────────────── */
+
+.rails { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: var(--s3); }
+.rail {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s3) var(--s4);
+}
+.rail .top { display: flex; align-items: center; gap: var(--s2); margin-bottom: 2px; }
+.rail .top strong { font-size: var(--t-sm); }
+.rail p { margin: 0; color: var(--fg2); font-size: var(--t-xs); line-height: 1.6; }
+
+/* 5단 구조 — 깊이를 왼쪽 선으로 보인다 */
+.levels { list-style: none; margin: 0; padding: 0; }
+.levels li {
+  border-left: 2px solid var(--accent-bd);
+  padding: var(--s2) 0 var(--s2) var(--s4);
+  margin-left: calc(var(--depth, 0) * var(--s5));
+  font-size: var(--t-sm);
+  color: var(--fg2);
+}
+.levels li strong { color: var(--fg); }
+
+/* ── 마감 CTA ─────────────────────────────────────── */
+
+.band {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: var(--s10) var(--s8);
+  text-align: center;
+}
+.band h2 { margin-bottom: var(--s3); }
+.band p { color: var(--fg2); margin: 0 0 var(--s6); }
+
 /* ── 알림 상자 ────────────────────────────────────── */
 /* 색만으로 뜻을 말하지 않는다 — 무엇이 잘못됐고 무엇을 하면 되는지를 글로 적는다 */
 
@@ -438,6 +532,10 @@ ol.steps li { margin-bottom: var(--s2); }
 }
 
 @media (max-width: 560px) {
+  /* 깊이만큼 민 들여쓰기는 좁은 화면에서 지면을 밖으로 밀어낸다 — 선만 남기고 민다 */
+  .levels li { margin-left: calc(var(--depth, 0) * var(--s1)); }
+  .step { grid-template-columns: 26px 1fr; gap: var(--s3); }
+  .step .num { width: 26px; height: 26px; font-size: var(--t-xs); }
   .site-header .wrap { min-height: 0; padding: var(--s2) var(--s5); flex-wrap: wrap; gap: var(--s2); }
   .nav { margin-left: 0; width: 100%; }
   .wrap { padding: 0 var(--s5); }
