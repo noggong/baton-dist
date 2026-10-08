@@ -8,13 +8,18 @@
 <meta property="og:title" content="Baton — 일은 AI에게, 지휘는 여기서">
 <meta property="og:description" content="티켓부터 배포까지, 흩어진 일을 AI 세션 하나로 묶는 macOS 앱.">
 <meta property="og:type" content="website">
+<!-- og:image 는 절대 주소여야 하고 SVG 를 읽지 않는 데가 많아 png 를 건다 -->
+<meta property="og:image" content="https://noggong.github.io/baton-dist/assets/logo.png">
+<meta property="og:url" content="https://noggong.github.io/baton-dist/">
+<link rel="icon" href="assets/logo.svg">
+<link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="mark">B</span>Baton</a>
+    <a class="brand" href="index.html"><img class="mark" src="assets/logo.svg" alt="" width="24" height="24">Baton</a>
     <nav class="nav">
       <a href="index.html" aria-current="page">소개</a>
       <a href="start.html">시작하기</a>

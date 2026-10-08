@@ -1,0 +1,40 @@
+<!-- 원천: Baton 의 apps/desktop/build/logo.svg (macOS 앱 아이콘).
+     그림은 한 획도 고치지 않았고, **viewBox 만 타일에 맞춰 조였다** — 원본은 1024 캔버스
+     안에 824 타일이 들어 있어(둘레 100씩 여백) 작은 자리에 쓰면 로고가 묻힌다.
+     앱 아이콘은 macOS 가 그 여백을 요구하지만 지면의 26px 자리에서는 손해다. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 824 824" width="824" height="824">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171f31"/>
+      <stop offset="1" stop-color="#0a0d12"/>
+    </linearGradient>
+    <linearGradient id="hi" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="0" y2="400">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="512" cy="512" r="430">
+      <stop offset="0" stop-color="#3d6bf0" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#3d6bf0" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="tileClip">
+      <rect x="100" y="100" width="824" height="824" rx="184"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tileClip)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#tile)"/>
+    <rect x="100" y="100" width="824" height="300" fill="url(#hi)"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#glow)"/>
+  </g>
+  <defs>
+    <linearGradient id="baton" gradientUnits="userSpaceOnUse"
+      x1="448.36" y1="575.64" x2="724.13" y2="299.87">
+      <stop offset="0" stop-color="#4272f5"/>
+      <stop offset="1" stop-color="#aec7ff"/>
+    </linearGradient>
+  </defs>
+  <!-- 배턴을 막 넘긴 주자 -->
+  <circle cx="299.87" cy="724.13" r="76" fill="#2c4fcb"/>
+  <!-- 넘어가는 배턴 -->
+  <line x1="448.36" y1="575.64" x2="724.13" y2="299.87"
+    stroke="url(#baton)" stroke-width="144" stroke-linecap="round"/>
+</svg>

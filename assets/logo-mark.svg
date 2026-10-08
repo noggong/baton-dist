@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="baton" gradientUnits="userSpaceOnUse"
+      x1="448.36" y1="575.64" x2="724.13" y2="299.87">
+      <stop offset="0" stop-color="#4272f5"/>
+      <stop offset="1" stop-color="#aec7ff"/>
+    </linearGradient>
+  </defs>
+  <!-- 배턴을 막 넘긴 주자 -->
+  <circle cx="299.87" cy="724.13" r="76" fill="#2c4fcb"/>
+  <!-- 넘어가는 배턴 -->
+  <line x1="448.36" y1="575.64" x2="724.13" y2="299.87"
+    stroke="url(#baton)" stroke-width="144" stroke-linecap="round"/>
+</svg>
