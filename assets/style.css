@@ -226,6 +226,9 @@ section { margin: 0 0 var(--s16); }
   margin: 0 auto var(--s6);
   line-height: 1.6;
 }
+/* 리드 안의 강조는 색까지 올린다 — 굵기만으로는 fg2 위에서 잘 안 읽힌다.
+   nowrap 은 「도는 / 앱이라」처럼 강조가 줄 끝에서 쪼개지는 것을 막는다(짧은 구에만 쓴다) */
+.hero .lead strong { color: var(--fg); font-weight: 620; white-space: nowrap; }
 
 .cta-row { display: flex; gap: var(--s3); justify-content: center; flex-wrap: wrap; }
 .cta-row.left { justify-content: flex-start; }
