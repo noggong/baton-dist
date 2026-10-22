@@ -62,8 +62,29 @@
 
     <div class="release latest">
       <div class="release-head">
-        <h3>1.5.2</h3>
+        <h3>1.5.3</h3>
         <span class="tag tag-latest">최신</span>
+        <span class="tag tag-signed">서명·공증</span>
+        <time datetime="2026-10-22">2026-10-22</time>
+      </div>
+      <div class="body">
+        <ul>
+          <li><span class="k k-feat">Feature</span> 서비스 개발 그룹에 「피처」 탭 추가 — 기능 추가 · 디자인만 수정 같은 일을 피처 하나로 만들고, 피처마다 바꿀 단계와 의존 피처를 정해 어디까지 왔는지 한 목록에서 확인</li>
+          <li><span class="k k-feat">Feature</span> 피처마다 개발 레포에 따로 브랜치를 세우고 「완료 — main에 머지」로 기획 · 디자인 · 설계 · 코드를 한 번에 main 에 합치는 기능 추가 — 「main 최신 반영」으로 그사이 바뀐 main 도 받아오기</li>
+          <li><span class="k k-imp">Improve</span> 디자인 · 설계 목록에 최종본만 표시하도록 개선 — 피처에서는 그 피처가 바꾼 것만 보이고, 지난 판은 「히스토리」에서 확인</li>
+          <li><span class="k k-feat">Feature</span> 기록 › 보관됨에서 피처였던 워크트리가 바꾼 기획 · 디자인 · 설계와 머지 내역을 보는 「피처 산출물」 추가</li>
+        </ul>
+      </div>
+      <div class="dl-row">
+        <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.3/Baton-1.5.3-arm64.dmg">dmg <span class="arch">Apple silicon</span></a>
+        <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.3/Baton-1.5.3.dmg">dmg <span class="arch">Intel</span></a>
+        <a class="dl" href="https://github.com/noggong/baton-dist/releases/tag/v1.5.3">릴리스 노트 <span class="arch">sha256 · zip 포함</span></a>
+      </div>
+    </div>
+
+    <div class="release">
+      <div class="release-head">
+        <h3>1.5.2</h3>
         <span class="tag tag-signed">서명·공증</span>
         <time datetime="2026-10-22">2026-10-22</time>
       </div>
@@ -78,7 +99,7 @@
       <div class="dl-row">
         <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.2/Baton-1.5.2-arm64.dmg">dmg <span class="arch">Apple silicon</span></a>
         <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.2/Baton-1.5.2.dmg">dmg <span class="arch">Intel</span></a>
-        <a class="dl" href="https://github.com/noggong/baton-dist/releases/tag/v1.5.2">릴리스 노트 <span class="arch">sha256 · zip 포함</span></a>
+        <a class="dl" href="https://github.com/noggong/baton-dist/releases/tag/v1.5.2">릴리스 노트</a>
       </div>
     </div>
 
@@ -100,27 +121,6 @@
         <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.1/Baton-1.5.1-arm64.dmg">dmg <span class="arch">Apple silicon</span></a>
         <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.1/Baton-1.5.1.dmg">dmg <span class="arch">Intel</span></a>
         <a class="dl" href="https://github.com/noggong/baton-dist/releases/tag/v1.5.1">릴리스 노트</a>
-      </div>
-    </div>
-
-    <div class="release">
-      <div class="release-head">
-        <h3>1.5.0</h3>
-        <span class="tag tag-signed">서명·공증</span>
-        <time datetime="2026-10-20">2026-10-20</time>
-      </div>
-      <div class="body">
-        <ul>
-          <li><span class="k k-feat">Feature</span> Claude 대신 Codex(ChatGPT 로그인)로 세션을 여는 기능 추가 — 승인 카드 · 사용량 한도 · 스킬 · 플러그인 · 원격 제어(페어링 코드)까지, Codex 만 쓰는 Mac 에서도 첫 실행부터 사용 가능</li>
-          <li><span class="k k-feat">Feature</span> 서비스 개발 그룹 추가 — 기획 → 디자인 · 설계 → 구현 → 마감을 플랫폼별 상태로 한눈에 보고, 칩마다 지금 누를 단추 하나만 표시 · 일감이 모두 끝나면 검증 자동 실행</li>
-          <li><span class="k k-imp">Improve</span> Baton Drive 에서 보는 문서의 배율을 <code>⌘+</code> · <code>⌘−</code> 와 화면의 − / + 단추로 조절하도록 개선 — 앱 전체가 커지던 것 대신 문서만</li>
-          <li><span class="k k-fix">Bugfix</span> 한글 입력 상태에서 브라우저 탭의 <code>⌘W</code> 가 세션 닫기를 묻던 문제와 오래 안 본 탭을 다시 열면 「뒤로」가 사라지던 문제 수정</li>
-        </ul>
-      </div>
-      <div class="dl-row">
-        <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.0/Baton-1.5.0-arm64.dmg">dmg <span class="arch">Apple silicon</span></a>
-        <a class="dl" href="https://github.com/noggong/baton-dist/releases/download/v1.5.0/Baton-1.5.0.dmg">dmg <span class="arch">Intel</span></a>
-        <a class="dl" href="https://github.com/noggong/baton-dist/releases/tag/v1.5.0">릴리스 노트</a>
       </div>
     </div>
 
